@@ -1,0 +1,48 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+    <Dialog id="idTextDialog" title="Add/Edit Work Item">
+        <f:SimpleForm
+            id="SimpleFormChange354"
+            editable="true"
+            layout="ResponsiveGridLayout"
+            labelSpanXL="3"
+            labelSpanL="3"
+            labelSpanM="3"
+            labelSpanS="12"
+            adjustLabelSpan="false"
+            emptySpanXL="4"
+            emptySpanL="4"
+            emptySpanM="4"
+            emptySpanS="0"
+            columnsXL="1"
+            columnsL="1"
+            columnsM="1"
+            singleContainerFullSize="false"
+        >
+            <f:content>
+                <Label text="Work Item Description" />
+                <Input id= "idItem" value="{Street}" />
+                <Label text="Work Number / Cost Object Assignment" />
+                <Input id="idNumber" value="{City}" />
+                <!-- <Label text="Effective Dates" /> -->
+                <!-- <HBox>
+               <DatePicker
+							id="DP1"
+							placeholder="Enter Date"
+							change="handleChange"
+							class="sapUiSmallMarginBottom"/>
+                <DatePicker
+							id="DP2"
+							placeholder="Enter Date"
+							change="handleChange"
+							class="sapUiSmallMarginBottom"/>
+                </HBox> -->
+                <Label text="Absence / Absence Type" />
+                <Input id="idAbsType" value="{City}" />
+            </f:content>
+        </f:SimpleForm>
+        	<buttons>
+			<Button text="Cancel" press=".onAEFCancel"></Button>
+			<Button text="Add" press=".onAEFApply" type="Emphasized"></Button>
+		</buttons>
+    </Dialog>
+</core:FragmentDefinition>

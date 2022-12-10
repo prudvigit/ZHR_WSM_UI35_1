@@ -1,0 +1,51 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+    <Dialog id="idTextDialog" title="Assign Template to Orgnization">
+        <f:SimpleForm
+            id="SimpleFormChange354"
+            editable="true"
+            layout="ResponsiveGridLayout"
+            labelSpanXL="3"
+            labelSpanL="3"
+            labelSpanM="3"
+            labelSpanS="12"
+            adjustLabelSpan="false"
+            emptySpanXL="4"
+            emptySpanL="4"
+            emptySpanM="4"
+            emptySpanS="0"
+            columnsXL="1"
+            columnsL="1"
+            columnsM="1"
+            singleContainerFullSize="false"
+        >
+            <f:content>
+                <Label text="Orgnization Attributes" />
+                <Input id="idAtt" value="{Street}" />
+                <Label text="Orgnization Values" />
+                <Select id="idOrgValue" selectedKey="{Country}">
+                    <items>
+                        <core:Item text="Company" key="Company" />
+                        <core:Item text="Pers Area" key="PersArea" />
+                        <core:Item text="Pers SubArea" key="PersSubArea" />
+                        <core:Item text="Pers SubArea" key="PersSubArea" />
+                        <core:Item text="Emp Group" key="EmpGroup" />
+                        <core:Item text="Emp SubGroup" key="EmpSubGroup" />
+                        <core:Item text="Business Unit" key="BusinessUnit" />
+                        <core:Item text="Division" key="Division" />
+                        <core:Item text="Department" key="Department" />
+                        <core:Item text="Team" key="Team" />
+                    </items>
+                </Select>
+                <!-- <Label text="Effective Dates" />
+                <HBox>
+                    <DatePicker id="DP_1" placeholder="Enter Effective Date from" change="handleChange" class="sapUiSmallMarginBottom" />
+                    <DatePicker id="DP_2" placeholder="Enter Effective Date to" change="handleChange" class="sapUiSmallMarginBottom" />
+                </HBox> -->
+            </f:content>
+        </f:SimpleForm>
+        <buttons>
+            <Button text="Cancel" press=".onAssignCancel" />
+            <Button text="Add" press=".onAssignApply" type="Emphasized" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

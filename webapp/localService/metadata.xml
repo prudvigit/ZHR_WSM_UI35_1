@@ -1,0 +1,47 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZHR_U133_WORK_SCHEDULE_MAINT_SRV" xml:lang="en"
+			sap:schema-version="1">
+			<EntityType Name="WORKSCHDHEAD" sap:content-version="1">
+				<Key><PropertyRef Name="Pernr"/><PropertyRef Name="SchdNo"/></Key><Property Name="Action" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Action" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personnel No." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SchdNo" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Schedule Number"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SchdName" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Schedule Name"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SchdStartDt" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Schedule Start Date"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SchdEndDt" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Schedule End Date"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ChangedBy" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Changed By"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ChangedOn" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Changed On" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="HeadertoItem" Relationship="ZHR_U133_WORK_SCHEDULE_MAINT_SRV.HeadertoItem" FromRole="FromRole_HeadertoItem"
+					ToRole="ToRole_HeadertoItem"/></EntityType>
+			<EntityType Name="WORKSCHDWEEK" sap:content-version="1">
+				<Key><PropertyRef Name="SchdNo"/><PropertyRef Name="SchdWk"/><PropertyRef Name="SchdDay"/></Key><Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personnel No." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SchdNo" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Schedule Number"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SchdWk" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Schedule Week No"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SchdDay" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Schedule Day No"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ShiftStart" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Shift Start Time"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ShiftEnd" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Shift End Time"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Employee" sap:content-version="1">
+				<Key><PropertyRef Name="PersonnelNumber"/></Key><Property Name="PersonnelNumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personnel No."
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FullName" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Empl./appl.name"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<Association Name="HeadertoItem" sap:content-version="1"><End Type="ZHR_U133_WORK_SCHEDULE_MAINT_SRV.WORKSCHDHEAD" Multiplicity="1" Role="FromRole_HeadertoItem"/><End Type="ZHR_U133_WORK_SCHEDULE_MAINT_SRV.WORKSCHDWEEK" Multiplicity="*" Role="ToRole_HeadertoItem"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_HeadertoItem"><PropertyRef Name="Pernr"/><PropertyRef Name="SchdNo"/></Principal>
+					<Dependent Role="ToRole_HeadertoItem"><PropertyRef Name="Pernr"/><PropertyRef Name="SchdNo"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZHR_U133_WORK_SCHEDULE_MAINT_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="WORKSCHDHEADSet" EntityType="ZHR_U133_WORK_SCHEDULE_MAINT_SRV.WORKSCHDHEAD" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="WORKSCHDWEEKSet" EntityType="ZHR_U133_WORK_SCHEDULE_MAINT_SRV.WORKSCHDWEEK" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="EmployeeSet" EntityType="ZHR_U133_WORK_SCHEDULE_MAINT_SRV.Employee" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<AssociationSet Name="HeadertoItemSet" Association="ZHR_U133_WORK_SCHEDULE_MAINT_SRV.HeadertoItem" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="WORKSCHDHEADSet" Role="FromRole_HeadertoItem"/><End EntitySet="WORKSCHDWEEKSet" Role="ToRole_HeadertoItem"/></AssociationSet>
+				<FunctionImport Name="Delete" ReturnType="ZHR_U133_WORK_SCHEDULE_MAINT_SRV.WORKSCHDWEEK" EntitySet="WORKSCHDWEEKSet" m:HttpMethod="GET"
+					sap:action-for="ZHR_U133_WORK_SCHEDULE_MAINT_SRV.WORKSCHDWEEK"><Parameter Name="Delete_Data" Type="Edm.String" Mode="In"/></FunctionImport>
+			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZHR_U133_WORK_SCHEDULE_MAINT_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZHR_U133_WORK_SCHEDULE_MAINT_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

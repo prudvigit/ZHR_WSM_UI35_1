@@ -1,0 +1,198 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.uxap" xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout" height="100%" controllerName="com.wec.hr.u135.ZHR_WSM_UI35.controller.Object">
+	<ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+				<!--<expandedHeading>-->
+				<!--	<m:Title text="Robot Arm Series 9"/>-->
+				<!--</expandedHeading>-->
+				<!--<snappedHeading>-->
+				<!--	<m:HBox>-->
+				<!--		<m:Avatar src="./test-resources/sap/uxap/images/robot.png" class="sapUiMediumMarginEnd" displayShape="Square"/>-->
+				<!--		<m:VBox>-->
+				<!--			<m:Title text="Robot Arm Series 9"/>-->
+				<!--			<m:Label text="PO-48865"/>-->
+				<!--		</m:VBox>-->
+				<!--	</m:HBox>-->
+				<!--</snappedHeading>-->
+				<!--<expandedContent>-->
+				<!--	<m:Label text="PO-48865"/>-->
+				<!--</expandedContent>-->
+				<actions>
+					<m:Button text="Validate" press="onValidate"/>
+					<m:Button text="Save" press="onSave"/>
+				</actions>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+		<!--<headerContent>-->
+		<!--	<m:FlexBox wrap="Wrap" fitContainer="true">-->
+		<!--		<m:Avatar src="./test-resources/sap/uxap/images/robot.png" class="sapUiMediumMarginEnd sapUiSmallMarginBottom" displayShape="Square"-->
+		<!--			displaySize="L"/>-->
+		<!--		<m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">-->
+		<!--			<m:HBox class="sapUiTinyMarginBottom" renderType="Bare">-->
+		<!--				<m:Label text="Manufacturer:" class="sapUiTinyMarginEnd"/>-->
+		<!--				<m:Text text=" Robotech"/>-->
+		<!--			</m:HBox>-->
+		<!--			<m:HBox class="sapUiTinyMarginBottom" renderType="Bare">-->
+		<!--				<m:Label text="Factory:" class="sapUiTinyMarginEnd"/>-->
+		<!--				<m:Text text=" Orlando, Florida"/>-->
+		<!--			</m:HBox>-->
+		<!--			<m:HBox>-->
+		<!--				<m:Label text="Supplier:" class="sapUiTinyMarginEnd"/>-->
+		<!--				<m:Link text="Robotech (234242343)"/>-->
+		<!--			</m:HBox>-->
+		<!--		</m:VBox>-->
+		<!--		<m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">-->
+		<!--			<m:Title text="Status" class="sapUiTinyMarginBottom"/>-->
+		<!--			<m:ObjectStatus text="Delivery" state="Success" class="sapMObjectStatusLarge"/>-->
+		<!--		</m:VBox>-->
+		<!--		<m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">-->
+		<!--			<m:Title text="Delivery Time" class="sapUiTinyMarginBottom"/>-->
+		<!--			<m:ObjectStatus text="12 Days" icon="sap-icon://shipping-status" class="sapMObjectStatusLarge"/>-->
+		<!--		</m:VBox>-->
+		<!--		<m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">-->
+		<!--			<m:Title text="Assembly Option" class="sapUiTinyMarginBottom"/>-->
+		<!--			<m:ObjectStatus text="To Be Selected" state="Error" class="sapMObjectStatusLarge"/>-->
+		<!--		</m:VBox>-->
+		<!--		<m:VBox class="sapUiLargeMarginEnd">-->
+		<!--			<m:Title text="Monthly Leasing Instalment" class="sapUiTinyMarginBottom"/>-->
+		<!--			<m:ObjectNumber number="379.99" unit="USD" emphasized="false" class="sapMObjectNumberLarge"/>-->
+		<!--		</m:VBox>-->
+		<!--	</m:FlexBox>-->
+		<!--</headerContent>-->
+		<sections>
+			<ObjectPageSection titleUppercase="false" title="Create/Edit Template">
+				<subSections>
+					<ObjectPageSubSection title="Create/Edit Template" showTitle="false">
+						<blocks>
+							<f:SimpleForm id="idCreateEditForm" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+								labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+								singleContainerFullSize="false">
+								<m:Label labelFor="input-b" text="Business Unit"/>
+								<m:Input id="input-b" required="true" value="{SupplierName}"/>
+								<m:Label labelFor="input-a" text="Template Name"/>
+								<m:Input value="{Street}" id="input-a" required="true"/>
+								<m:Label labelFor="input-c" text="Effective Dates"/>
+								<m:Input placeholder="From Date" required="true" id="input-c" value="{ZIPCode}"/>
+								<m:Input placeholder="To Date" required="true" value="{City}"/>
+								<m:Label labelFor="input-d" text="Sort Priority"/>
+								<m:Select id="input-d" selectedKey="{Country}">
+									<m:items>
+										<core:Item text="001" key="England"/>
+										<core:Item text="002" key="Germany"/>
+										<core:Item text="003" key="USA"/>
+									</m:items>
+								</m:Select>
+							</f:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection titleUppercase="false" title="Add/Edit Work Item">
+				<subSections>
+					<ObjectPageSubSection title="Add/Edit Work Item" showTitle="false">
+						<blocks>
+							<m:VBox>
+								<m:OverflowToolbar id="otbFooter">
+									<m:ToolbarSpacer/>
+									<m:Button icon="sap-icon://add" type="Emphasized" press=".onAddWorkItem"/>
+								</m:OverflowToolbar>
+								<m:Table id="idAddEditTable" inset="false" items="{appModel>/}" mode="SingleSelectMaster" selectionChange=".onEditChange">
+									<m:headerToolbar/>
+									<m:infoToolbar>
+										<m:OverflowToolbar>
+											<m:Label text="Work Items"/>
+										</m:OverflowToolbar>
+									</m:infoToolbar>
+									<m:columns>
+										<m:Column width="40px"/>
+										<m:Column width="40px"/>
+										<m:Column/>
+										<m:Column width="12em">
+											<m:Text text="Work Item"/>
+										</m:Column>
+										<!--<m:Column minScreenWidth="Tablet" demandPopin="true">-->
+										<!--	<m:Text text="From"/>-->
+										<!--</m:Column>-->
+										<!--<m:Column minScreenWidth="Desktop" demandPopin="true">-->
+										<!--	<m:Text text="To"/>-->
+										<!--</m:Column>-->
+										<m:Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+											<m:Text text="Work Order / Cost Object"/>
+										</m:Column>
+										<m:Column hAlign="End">
+											<m:Text text="Abs / Abs Type"/>
+										</m:Column>
+										<m:Column hAlign="Center">
+											<m:Text text="Added By"/>
+										</m:Column>
+									</m:columns>
+									<m:items>
+										<m:ColumnListItem vAlign="Middle" id="idAddEditItems">
+											<m:cells>
+												<m:Button icon="sap-icon://delete" press=".onDelete"/>
+												<m:Button icon="sap-icon://arrow-top" press=".onUp"/>
+												<m:Button icon="sap-icon://arrow-bottom" press=".onDown"/>
+												<m:Text text="{appModel>Name}"/>
+												<!--<m:Text text="{appModel>EffectiveFrom}"/>-->
+												<!--<m:Text text="{appModel>EffectiveTo}"/>-->
+												<m:Text text="{appModel>WorkOrder}"/>
+												<m:Text text="{appModel>AbsType}"/>
+												<m:Text text="{appModel>AddedBy}"/>
+											</m:cells>
+										</m:ColumnListItem>
+									</m:items>
+								</m:Table>
+							</m:VBox>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection titleUppercase="false" title="Assign Template to organization">
+				<subSections>
+					<ObjectPageSubSection title="Assign Template to organization" showTitle="false">
+						<blocks>
+							<m:VBox>
+								<m:OverflowToolbar id="otbFooter1">
+									<m:ToolbarSpacer/>
+									<m:Button icon="sap-icon://add" type="Emphasized" press=".onAOrgForm"/>
+								</m:OverflowToolbar>
+								<m:Table id="idAssignTable" inset="false" items="{assignModel>/}" mode="SingleSelectMaster" selectionChange=".onOrgChange">
+									<m:headerToolbar/>
+									<m:columns>
+										<m:Column width="40px"/>
+										<m:Column width="10px"/>
+										<m:Column width="12em" hAlign="Center"> 
+											<m:Text text="Orgnization Attributes"/>
+										</m:Column>
+										<m:Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+											<m:Text text="Orgnization Values"/>
+										</m:Column>
+										<!--<m:Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">-->
+										<!--	<m:Text text="From"/>-->
+										<!--</m:Column>-->
+										<!--<m:Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">-->
+										<!--	<m:Text text="To"/>-->
+										<!--</m:Column>-->
+									</m:columns>
+									<m:items>
+										<m:ColumnListItem vAlign="Middle">
+											<m:cells>
+												<m:Button icon="sap-icon://delete" press=".onDelete"/>
+												<m:Text text=""/>
+												<m:Text text="{assignModel>OrgAtt}"/>
+												<m:Text text="{assignModel>OrgValue}"/>
+												<!--<m:Text text="{assignModel>EffectFrom}"/>-->
+												<!--<m:Text text="{assignModel>EffectTo}"/>-->
+											</m:cells>
+										</m:ColumnListItem>
+									</m:items>
+								</m:Table>
+							</m:VBox>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+	</ObjectPageLayout>
+</mvc:View>
