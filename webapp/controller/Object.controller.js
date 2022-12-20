@@ -91,17 +91,22 @@ sap.ui.define(
          * @private
          */
         _onObjectMatched: function (oEvent) {
-          var sObjectId = oEvent.getParameter("arguments").objectId;
-          this.getModel()
-            .metadataLoaded()
-            .then(
-              function () {
-                var sObjectPath = this.getModel().createKey("Products", {
-                  ProductID: sObjectId,
-                });
-                this._bindView("/" + sObjectPath);
-              }.bind(this)
-            );
+          var id = oEvent.getParameter("arguments").objectId;
+          var sPath = '/' + id
+          var objectData = this.getView().getModel('template').getObject(sPath)
+          this.getView().getModel('appModel').setProperty('/objData',objectData)
+          // this.getView().getModel('template').getObject('/0')
+
+          // this.getModel()
+          //   .metadataLoaded()
+          //   .then(
+          //     function () {
+          //       var sObjectPath = this.getModel().createKey("Products", {
+          //         ProductID: sObjectId,
+          //       });
+          //       this._bindView("/" + sObjectPath);
+          //     }.bind(this)
+          //   );
 
           // this._fnCreateEditForm();
         },

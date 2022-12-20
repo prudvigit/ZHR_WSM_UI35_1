@@ -84,7 +84,7 @@ sap.ui.define([
 		 * @param {sap.ui.base.Event} oEvent the table selectionChange event
 		 * @public
 		 */
-		onPress : function (oEvent) {
+		 onEdit : function (oEvent) {
 			// The source is the list item that got pressed
 			this._showObject(oEvent.getSource());
 		},
@@ -140,11 +140,14 @@ sap.ui.define([
 		 * @private
 		 */
 		_showObject : function (oItem) {
-			var sPath = oItem.getBindingContext('template').getPath()
-			var sName = this.getView().getModel('template').getObject(sPath).Name
+			// var sPath = oItem.getBindingContext('template').getPath()
+			var sPath = this.byId('table').getSelectedContextPaths()[0];
+			var id = sPath.split('/')[1]
+
+			// var sName = this.getView().getModel('template').getObject(sPath).Name
 			this.getRouter().navTo("object", {
 				// objectId: oItem.getBindingContext().getProperty("SchdNo")
-				objectId: sName
+				objectId: id
 			});
 		},
 

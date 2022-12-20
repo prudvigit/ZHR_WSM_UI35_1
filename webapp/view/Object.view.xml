@@ -69,12 +69,12 @@
 								labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
 								singleContainerFullSize="false">
 								<m:Label labelFor="input-b" text="Business Unit"/>
-								<m:Input id="input-b" required="true" value="{SupplierName}"/>
+								<m:Input id="input-b" required="true" value="{appModel>/objData/Unit}"/>
 								<m:Label labelFor="input-a" text="Template Name"/>
-								<m:Input value="{Street}" id="input-a" required="true"/>
+								<m:Input value="{appModel>/objData/Name}" id="input-a" required="true"/>
 								<m:Label labelFor="input-c" text="Effective Dates"/>
-								<m:Input placeholder="From Date" required="true" id="input-c" value="{ZIPCode}"/>
-								<m:Input placeholder="To Date" required="true" value="{City}"/>
+								<m:Input placeholder="From Date" required="true" id="input-c" value="{appModel>/objData/EffecFromDate}"/>
+								<m:Input placeholder="To Date" required="true" value="{appModel>/objData/EffecToDate}"/>
 								<m:Label labelFor="input-d" text="Sort Priority"/>
 								<m:Select id="input-d" selectedKey="{Country}">
 									<m:items>
@@ -97,7 +97,7 @@
 									<m:ToolbarSpacer/>
 									<m:Button icon="sap-icon://add" type="Emphasized" press=".onAddWorkItem"/>
 								</m:OverflowToolbar>
-								<m:Table id="idAddEditTable" inset="false" items="{appModel>/}" mode="SingleSelectMaster" selectionChange=".onEditChange">
+								<m:Table id="idAddEditTable" inset="false" items="{appModel>/objData/workItems}" mode="SingleSelectMaster" selectionChange=".onEditChange">
 									<m:headerToolbar/>
 									<m:infoToolbar>
 										<m:OverflowToolbar>
@@ -105,8 +105,8 @@
 										</m:OverflowToolbar>
 									</m:infoToolbar>
 									<m:columns>
-										<m:Column width="40px"/>
-										<m:Column width="40px"/>
+										<m:Column width="50px"/>
+										<m:Column width="50px"/>
 										<m:Column/>
 										<m:Column width="12em">
 											<m:Text text="Work Item"/>
@@ -134,8 +134,6 @@
 												<m:Button icon="sap-icon://arrow-top" press=".onUp"/>
 												<m:Button icon="sap-icon://arrow-bottom" press=".onDown"/>
 												<m:Text text="{appModel>Name}"/>
-												<!--<m:Text text="{appModel>EffectiveFrom}"/>-->
-												<!--<m:Text text="{appModel>EffectiveTo}"/>-->
 												<m:Text text="{appModel>WorkOrder}"/>
 												<m:Text text="{appModel>AbsType}"/>
 												<m:Text text="{appModel>AddedBy}"/>

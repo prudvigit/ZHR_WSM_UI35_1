@@ -10,8 +10,8 @@
 				</f:heading>
 				<f:actions>
 					<ToolbarSpacer/>
-					<Button icon="sap-icon://create" text="Create Template" type="Transparent"/>
-					<Button icon="sap-icon://edit" text="Edit / Display Templates" type="Transparent" press="onToggleFooter"/>
+					<Button icon="sap-icon://create" text="Create Template" type="Transparent" />
+					<Button icon="sap-icon://edit" text="Edit / Display Templates" type="Transparent" press="onEdit"/>
 					<Button icon="sap-icon://copy" text="Copy Templates" type="Transparent"/>
 				</f:actions>
 			</f:DynamicPageTitle>
@@ -60,7 +60,7 @@
 		</f:header>
 		<f:content>
 			<Table id="table" busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
-				noDataText="{worklistView>/tableNoDataText}" updateFinished=".onUpdateFinished" width="auto" mode="None"
+				noDataText="{worklistView>/tableNoDataText}" updateFinished=".onUpdateFinished" width="auto" mode="SingleSelectLeft"
 				items="{template>/}">
 				
 				<headerToolbar>
@@ -94,7 +94,8 @@
 					</Column> -->
 				</columns>
 				<items>
-					<ColumnListItem type="Navigation" press=".onPress">
+					<!-- <ColumnListItem type="Navigation" press=".onPress"> -->
+					<ColumnListItem>
 						<cells>
 							<!-- <ObjectIdentifier title="{ProductName}"/> -->
 							<Text text="{template>Name}"/>

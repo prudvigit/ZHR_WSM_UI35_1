@@ -82,6 +82,9 @@
 				"settings": {},
 				"preload": false,
 				"uri": "model/data/templateList.json"
+			},
+			"appModel":{
+				"type": "sap.ui.model.json.JSONModel"
 			}
 		},
 		"routing": {
@@ -101,7 +104,7 @@
 				"name": "worklist",
 				"target": ["worklist"]
 			}, {
-				"pattern": "WORKSCHDHEADSet/{objectId}",
+				"pattern": "{objectId}",
 				"name": "object",
 				"target": ["object"]
 			}],
