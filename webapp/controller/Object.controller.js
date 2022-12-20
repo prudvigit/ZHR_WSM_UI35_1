@@ -3,7 +3,7 @@ sap.ui.define(
     "./BaseController",
     "sap/ui/model/json/JSONModel",
     "sap/ui/core/routing/History",
-    "mycompany/myapp/MyWorklistApp/model/formatter",
+    "../model/formatter",
     "sap/ui/core/format/DateFormat",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
@@ -22,7 +22,7 @@ sap.ui.define(
     "use strict";
 
     return BaseController.extend(
-      "mycompany.myapp.MyWorklistApp.controller.Object",
+      "com.wec.hr.u135.ZHR_WSM_UI35.controller.Object",
       {
         formatter: formatter,
 

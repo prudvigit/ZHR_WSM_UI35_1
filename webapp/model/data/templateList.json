@@ -1,19 +1,99 @@
 [
     {
       "Name": "Template-1",
-      "Unit": "BusinessUnit-1"
+      "Unit": "BusinessUnit-1",
+      "EffecFromDate":"01-01-2022",
+      "EffecToDate":"31-12-2023",
+      "workItems":[{
+        "Name": "WorkItem-1",
+        "EffectiveFrom": "11/01/2022",
+        "EffectiveTo": "12/31/2022",
+        "WorkOrder": "WorkOrder-1",
+        "AbsType": "AbsType-1",
+        "AddedBy": "Name-1"
+      }, {
+        "Name": "WorkItem-2",
+        "EffectiveFrom": "01/01/2023",
+        "EffectiveTo": "03/31/2023",
+        "WorkOrder": "WorkOrder-2",
+        "AbsType": "AbsType-2",
+        "AddedBy": "Name-2"
+      }, {
+        "Name": "WorkItem-3",
+        "EffectiveFrom": "04/01/2023",
+        "EffectiveTo": "12/31/2023",
+        "WorkOrder": "WorkOrder-3",
+        "AbsType": "AbsType-3",
+        "AddedBy": "Name-3"
+      }, {
+        "Name": "WorkItem-4",
+        "EffectiveFrom": "01/01/2024",
+        "EffectiveTo": "12/31/2024",
+        "WorkOrder": "WorkOrder-4",
+        "AbsType": "AbsType-4",
+        "AddedBy": "Name-4"
+      }, {
+        "Name": "WorkItem-5",
+        "EffectiveFrom": "01/01/2025",
+        "EffectiveTo": "12/31/2025",
+        "WorkOrder": "WorkOrder-5",
+        "AbsType": "AbsType-5",
+        "AddedBy": "Name-5"
+      }],
+      "orgAttributes":[
+        {
+          "OrgAtt": "Org Attribute - 1",
+          "OrgValue": "Org Value - 1",
+          "EffectFrom": "03/31/2023",
+          "EffectTo": "03/31/2023"
+        },
+        {
+          "OrgAtt": "Org Attribute - 2",
+          "OrgValue": "Org Value - 2",
+          "EffectFrom": "03/31/2023",
+          "EffectTo": "03/31/2023"
+        },
+        {
+          "OrgAtt": "Org Attribute - 3",
+          "OrgValue": "Org Value - 3",
+          "EffectFrom": "03/31/2023",
+          "EffectTo": "03/31/2023"
+        },
+        {
+          "OrgAtt": "Org Attribute - 3",
+          "OrgValue": "Org Value - 3",
+          "EffectFrom": "03/31/2023",
+          "EffectTo": "03/31/2023"
+        },
+        {
+          "OrgAtt": "Org Attribute - 4",
+          "OrgValue": "Org Value - 4",
+          "EffectFrom": "03/31/2023",
+          "EffectTo": "03/31/2023"
+        }
+      ]
+    
+    
+
     },
     {
       "Name": "Template-2",
-      "Unit": "BusinessUnit-2"
+      "Unit": "BusinessUnit-2",
+      "EffecFromDate":"01-01-2022",
+      "EffecToDate":"31-12-2023"
     },
     {
       "Name": "Template-3",
-      "Unit": "BusinessUnit-3"
+      "Unit": "BusinessUnit-3",
+      "EffecFromDate":"01-01-2022",
+      "EffecToDate":"31-12-2023"
+
     },
     {
       "Name": "Template-4",
-      "Unit": "BusinessUnit-4"
+      "Unit": "BusinessUnit-4",
+      "EffecFromDate":"01-01-2022",
+      "EffecToDate":"31-12-2023"
     }
   ]
 

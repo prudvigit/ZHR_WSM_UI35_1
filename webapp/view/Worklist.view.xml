@@ -77,6 +77,12 @@
 					<Column id="supplierNameColumn" demandPopin="false" minScreenWidth="Tablet">
 						<Text text="Business Unit"/>
 					</Column>
+					<Column id="idFromDate" demandPopin="false" minScreenWidth="Tablet">
+						<Text text="Effective From Date"/>
+					</Column>
+					<Column id="idToDate" demandPopin="false" minScreenWidth="Tablet">
+						<Text text="Effective To Date"/>
+					</Column>
 					<!-- <Column id="unitPriceColumn" hAlign="End" demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>TablePriceColumnTitle}"/>
 					</Column>
@@ -93,6 +99,8 @@
 							<!-- <ObjectIdentifier title="{ProductName}"/> -->
 							<Text text="{template>Name}"/>
 							<Text text="{template>Unit}"/>
+							<Text text="{template>EffecFromDate}"/>
+							<Text text="{template>EffecToDate}"/>
 							<!-- <ObjectNumber unit="EUR" number="{ path: 'UnitPrice', formatter: '.formatter.numberUnit'}"/>
 							<ObjectNumber number="{ path: 'UnitsOnOrder', formatter: '.formatter.numberUnit'}" unit="PC"/>
 							<ObjectNumber number="{ path: 'UnitsInStock', formatter: '.formatter.numberUnit'}" unit="PC"

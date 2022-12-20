@@ -140,8 +140,11 @@ sap.ui.define([
 		 * @private
 		 */
 		_showObject : function (oItem) {
+			var sPath = oItem.getBindingContext('template').getPath()
+			var sName = this.getView().getModel('template').getObject(sPath).Name
 			this.getRouter().navTo("object", {
-				objectId: oItem.getBindingContext().getProperty("SchdNo")
+				// objectId: oItem.getBindingContext().getProperty("SchdNo")
+				objectId: sName
 			});
 		},
 
