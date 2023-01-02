@@ -155,10 +155,10 @@
 									<m:ToolbarSpacer/>
 									<m:Button icon="sap-icon://add" type="Emphasized" press=".onAOrgForm"/>
 								</m:OverflowToolbar>
-								<m:Table id="idAssignTable" inset="false" items="{assignModel>/}" mode="SingleSelectMaster" selectionChange=".onOrgChange">
+								<m:Table id="idAssignTable" inset="false" items="{appModel>/objData/orgAttributes}" mode="SingleSelectMaster" selectionChange=".onOrgChange">
 									<m:headerToolbar/>
 									<m:columns>
-										<m:Column width="40px"/>
+										<m:Column width="50px"/>
 										<m:Column width="10px"/>
 										<m:Column width="12em" hAlign="Center"> 
 											<m:Text text="Orgnization Attributes"/>
@@ -178,8 +178,8 @@
 											<m:cells>
 												<m:Button icon="sap-icon://delete" press=".onDelete"/>
 												<m:Text text=""/>
-												<m:Text text="{assignModel>OrgAtt}"/>
-												<m:Text text="{assignModel>OrgValue}"/>
+												<m:Text text="{appModel>OrgAtt}"/>
+												<m:Text text="{appModel>OrgValue}"/>
 												<!--<m:Text text="{assignModel>EffectFrom}"/>-->
 												<!--<m:Text text="{assignModel>EffectTo}"/>-->
 											</m:cells>

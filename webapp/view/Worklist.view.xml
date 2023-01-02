@@ -10,8 +10,8 @@
 				</f:heading>
 				<f:actions>
 					<ToolbarSpacer/>
-					<Button icon="sap-icon://create" text="Create Template" type="Transparent" />
-					<Button icon="sap-icon://edit" text="Edit / Display Templates" type="Transparent" press="onEdit"/>
+					<Button icon="sap-icon://create" text="Create Template" type="Transparent" press=".onCreate"/>
+					<Button icon="sap-icon://edit" text="Edit / Display Templates" type="Transparent" press=".onEdit"/>
 					<Button icon="sap-icon://copy" text="Copy Templates" type="Transparent"/>
 				</f:actions>
 			</f:DynamicPageTitle>

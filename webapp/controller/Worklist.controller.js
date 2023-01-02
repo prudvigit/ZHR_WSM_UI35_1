@@ -164,6 +164,13 @@ sap.ui.define([
 			if (aTableSearchState.length !== 0) {
 				oViewModel.setProperty("/tableNoDataText", this.getResourceBundle().getText("worklistNoDataWithSearchText"));
 			}
+		},
+		onCreate: function(){
+				// The source is the list item that got pressed
+				this.getRouter().navTo("object", {
+					// objectId: oItem.getBindingContext().getProperty("SchdNo")
+					objectId: "createq"
+				});
 		}
 
 	});
